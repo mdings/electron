@@ -1,0 +1,71 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#entries {
+  float: left;
+  height: 100%;
+  width: 380px;
+  font-family: 'Open Sans', sans-serif;
+  border-right: 1px solid #ccc;
+}
+
+.entry {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.entry h1 {
+  overflow: hidden;
+  font-size: 22px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* number of lines to show */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.entry .body {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* number of lines to show */
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+#editor {
+  float: left;
+  width: calc(100% - 380px);
+  font-family: arial, sans-serif;
+  font-size: 20px;
+  display: block;
+  height: 100%;
+}
+
+#actions {
+  background: #dcdcdc;
+  height: 50px;
+}
+
+#markup-editor {
+  height: calc(100% - 50px);
+  padding: 40px;
+}
+
+#markup-editor:focus,
+#markup-editor:active {
+  border: none;
+  outline: 0;
+}

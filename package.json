@@ -1,5 +1,28 @@
 {
-  "name"    : "electron",
-  "version" : "0.1.0",
-  "main"    : "main.js"
+  "name": "elec-app",
+  "displayName": "My Electron app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "author": "",
+  "engines": {
+    "electron": "0.33.4"
+  },
+  "dependencies": {
+    "front-matter": "^1.0.0",
+    "handlebars": "^4.0.3",
+    "when": "^3.7.3"
+  },
+  "devDependencies": {
+    "browserify": "~3.24.1",
+    "github-api": "^0.10.6",
+    "grunt": "~0.4.2",
+    "grunt-browserify": "~1.3.0",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-exec": "^0.4.6",
+    "hbsfy": "^2.3.1",
+    "load-grunt-config": "~0.12.0",
+    "node-taffydb": "^0.2.0"
+  }
 }

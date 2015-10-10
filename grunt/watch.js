@@ -1,15 +1,13 @@
 module.exports = {
   options: {
-    livereload: true
+    livereload: true,
+    spaw: false
   },
 
   // sass
   sass: {
     files: ['sass/**/*.scss'],
-    tasks: ['sass:build'],
-    options: {
-      spawn: false,
-    }
+    tasks: ['sass:build']
   },
 
   // js
@@ -21,12 +19,20 @@ module.exports = {
     }
   },
 
-  // handlebars
-  hbs: {
-    files: ['templates/**/*.hbs'],
+  tags: {
+    files: ['tags/**/*.tag'],
     tasks: ['browserify:build'],
     options: {
       spawn: false,
     }
   }
+
+  // handlebars
+  // hbs: {
+  //   files: ['templates/**/*.hbs'],
+  //   tasks: ['browserify:build'],
+  //   options: {
+  //     spawn: false,
+  //   }
+  // }
 }

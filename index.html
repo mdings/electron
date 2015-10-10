@@ -2,23 +2,13 @@
 <html>
   <head>
     <title>Hello World!</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <script type="text/template" id="entry">
-        <h1>{{attributes.title}}</h1>
-        <div class="body">{{body}}</div>
-    </script>
 
-    <!-- entries placehold -->
-    <div id="entries"></div>
-    <div id="editor">
-      <div id="actions">
-        <button id="save-post">Save post</button>
-      </div>
-      <div contenteditable="true" id="markup-editor"></div>  
-    </div>
+    <hello-world></hello-world>
     
     <script src="main.app.js" type="text/javascript"></script>
   </body>

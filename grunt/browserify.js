@@ -1,6 +1,6 @@
 module.exports = {
   options: {
-    transform: ['hbsfy'],
+    transform: ['riotify'],
     debug: true,
     shim: {
     }

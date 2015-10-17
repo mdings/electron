@@ -1,7 +1,13 @@
 'use strict';
+var Firebase = require('firebase');
 
 var riot = require('riot')
-var helloWorld = require('../tags/hello-world.tag');
+var docTag = require('../tags/documents.tag');
+var editorTag = require('../tags/editor.tag');
 
+var ref = new Firebase('https://editionapp.firebaseio.com/')
+var documents = riot.mount(docTag, { ref: ref })[0];
 
-riot.mount(helloWorld);
+documents.on('loadfile', function(id){
+  riot.mount( editorTag, { ref: ref.child(id), id: id });
+});

@@ -1,9 +1,7 @@
 module.exports = {
   options: {
     transform: ['riotify'],
-    debug: true,
-    shim: {
-    }
+    debug: true
   },
 
   build: {

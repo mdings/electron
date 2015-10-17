@@ -9,5 +9,5 @@ var ref = new Firebase('https://editionapp.firebaseio.com/')
 var documents = riot.mount(docTag, { ref: ref })[0];
 
 documents.on('loadfile', function(id){
-  riot.mount( editorTag, { ref: ref.child(id), id: id });
+  riot.mount( editorTag, { ref: ref + id, id: id });
 });

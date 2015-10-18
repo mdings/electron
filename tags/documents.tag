@@ -9,7 +9,7 @@
     opts.ref.push().set({
       title: 'Hello World',
       author: 'Firebase',
-      content: 'This is some dummy content'
+      body: 'This is some dummy content'
     })
   }
 
@@ -24,7 +24,7 @@
     };
     this.documents.push( doc );
     // keep the content of the document in localStorage as well
-    localStorage.setItem(doc.key, doc.value['content']);
+    localStorage.setItem(doc.key, doc.value['body']);
     this.update();
   }.bind(this));
 

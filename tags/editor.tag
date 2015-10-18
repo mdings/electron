@@ -1,62 +1,34 @@
 <editor>
-  <div id="markdown-editor"></div>
+  <button onclick="{save}">Save as revision</button>
+  <textarea id="markdown-editor"></textarea>
+
+  var CodeMirror = require('codemirror');
 
   this.on('mount', function(){
-    var ace = require('brace');
-    var DiffMatchPatch = require('diff-match-patch');
-    var dmp = new DiffMatchPatch();
-    require('brace/mode/textile');
-    require('brace/theme/eclipse');
-    
+    // get the text from localstorage   
     this.text = localStorage.getItem(opts.id);
-    this.shadowText = this.text;
 
-    var editor = ace.edit('markdown-editor');
-    editor.setOptions({
-      showLineNumbers: false,
-      showGutter: false,
-      showPrintMargin: false,
-      fontSize: '19px'
+    CodeMirror.fromTextArea(document.getElementById('markdown-editor'), {
+      lineNumbers: true,
+      value: this.text
     });
-
-    editor.getSession().setMode('ace/mode/textile');
-    editor.getSession().setUseWrapMode(true);
-    
-    editor.getSession().on('change', function(){
-      console.log(opts.ref);
-      var diff = dmp.diff_main( editor.getValue(), this.text );
-      this.save(diff);
-    }.bind(this));
-    
-    editor.setTheme('ace/theme/eclipse');
-    editor.setValue(this.text);
   });
-  
-  updateText(e) {
-    //- this.shadowText = e.target.innerHTML;
+
+  save() {
+    //- var DiffMatchPatch = require('diff-match-patch');
+    //- var DMP = new DiffMatchPatch();
+
+    //- // calculate the diffs and patches and store the
+    //- // patched text as a revision
+    //- var diffs = DMP.diff_main(this.text, editor.getValue());
+    //- var patches = DMP.patch_make(this.text, diffs);
+    //- var text = DMP.patch_toText(patches);
+    //- opts.ref.child('revisions').push().set({
+    //-   body: text,
+    //-   timestamp: new Date().getTime()
+    //- });
   }
-
   
-  // make sure pasting happens only as plain text disabling any markup
-  //- pasteText(e) {
-  //-   e.preventDefault();
-  //-   // get text representation of clipboard
-  //-   var text = e.clipboardData.getData("text/plain");
-  //-   // insert text manually
-  //-   document.execCommand("insertHTML", false, text);
-  //- }
-
-  save( diff ) {
-    opts.ref.update({
-      'history': diff
-    });
-  }
-
-  //- opts.ref.on('child_changed', function(){
-  //-   localStorage.setItem( opts.id, this.shadowText );
-  //- }.bind(this));
-
-
-
+ 
 </editor>
 

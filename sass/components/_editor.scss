@@ -1,18 +1,24 @@
 editor {
   float: left;
-  width: 80%;
+  width: calc(80% - 200px);
   height: 100%;
   position: relative;
-  
-  #markdown-editor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+
+  // #markdown-editor {
+  //   position: absolute;
+  //   top: 20px;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
     
-    textarea {
-      padding: 0 40px;
-    }
-  }
+  //   .ace_content {
+  //     padding: 0 40px
+  //   }
+    
+  //   .ace_layer {
+  //     padding: 0 40px;
+  //   }
+  // }
 }
